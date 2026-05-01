@@ -5,3 +5,5 @@ dist
 uploads
 *.tsbuildinfo
 .chrome-profile*
+public\photo.jpg
+public\Gowri-Arun-Resume.pdf

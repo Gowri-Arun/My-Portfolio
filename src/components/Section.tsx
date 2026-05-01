@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import type { ReactNode } from 'react';
 
 type SectionProps = {
@@ -9,14 +9,16 @@ type SectionProps = {
 };
 
 export function Section({ id, eyebrow, title, children }: SectionProps) {
+  const reduceMotion = useReducedMotion();
+
   return (
     <motion.section
       id={id}
       className="section-shell"
-      initial={{ opacity: 0, y: 18 }}
+      initial={reduceMotion ? false : { opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.45, ease: 'easeOut' }}
+      transition={{ duration: reduceMotion ? 0 : 0.45, ease: 'easeOut' }}
     >
       <div className="mb-8 max-w-3xl">
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}
