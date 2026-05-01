@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+a,
+button {
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto max-w-6xl px-5 py-6 md:px-8 md:py-6;
+  }
+
+  .eyebrow {
+    @apply text-xs font-black uppercase tracking-[0.22em] text-cyan-700 dark:text-cyan-300;
+  }
+
+  .section-title {
+    @apply mt-3 max-w-full text-2xl font-black tracking-tight text-zinc-950 dark:text-white sm:text-4xl;
+  }
+
+  .primary-button {
+    @apply inline-flex min-h-11 items-center gap-2 rounded-lg border-2 border-zinc-950 bg-zinc-950 px-5 py-3 text-sm font-black text-white shadow-[5px_5px_0_rgba(8,145,178,.28)] hover:-translate-y-0.5 hover:bg-cyan-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-500 focus-visible:outline-offset-2 dark:border-white dark:bg-white dark:text-zinc-950 dark:hover:bg-cyan-200 dark:focus-visible:outline-cyan-300;
+  }
+
+  .secondary-button,
+  .contact-link {
+    @apply inline-flex min-h-11 items-center gap-2 rounded-lg border-2 border-zinc-200 bg-white px-5 py-3 text-sm font-black text-zinc-900 shadow-sm hover:-translate-y-0.5 hover:border-cyan-500 hover:shadow-[4px_4px_0_rgba(8,145,178,.18)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-500 focus-visible:outline-offset-2 dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:border-cyan-300/60 dark:focus-visible:outline-cyan-300;
+  }
+
+  .project-card {
+    @apply rounded-2xl border-2 border-zinc-950 bg-white p-6 shadow-[7px_7px_0_rgba(15,23,42,.1)] dark:border-white/20 dark:bg-white/[0.045] md:p-8;
+  }
+
+  .quiet-card {
+    @apply rounded-2xl border-2 border-zinc-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/[0.045];
+  }
+
+  .meta-pill {
+    @apply rounded-full bg-cyan-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-cyan-800 dark:bg-cyan-300/15 dark:text-cyan-200;
+  }
+
+  .subtle-pill {
+    @apply rounded-full bg-zinc-100 px-3 py-1 text-xs font-bold text-zinc-600 dark:bg-white/10 dark:text-zinc-300;
+  }
+
+  .tech-pill {
+    @apply rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-sm font-semibold text-zinc-700 dark:border-white/10 dark:bg-white/5 dark:text-zinc-300;
+  }
+
+  .project-link {
+    @apply inline-flex min-h-10 items-center gap-2 rounded-lg border-2 border-zinc-950 bg-zinc-950 px-4 py-2 text-sm font-black text-white hover:-translate-y-0.5 hover:bg-cyan-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-500 focus-visible:outline-offset-2 dark:border-white dark:bg-white dark:text-zinc-950;
+  }
+
+  .project-link-muted {
+    @apply border-zinc-300 bg-white text-zinc-950 hover:border-cyan-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-500 focus-visible:outline-offset-2 dark:border-white/15 dark:bg-transparent dark:text-white dark:focus-visible:outline-cyan-300;
+  }
+
+  .portrait-card {
+    @apply relative max-w-sm rounded-[1.6rem] border-4 border-zinc-950 bg-white p-3 shadow-[12px_12px_0_rgba(8,145,178,.25)] dark:border-white dark:bg-zinc-900;
+  }
+
+  .portrait-caption {
+    @apply mt-3 flex items-center justify-between rounded-xl bg-amber-100 px-4 py-3 text-sm font-black text-zinc-950 dark:bg-amber-200;
+  }
+
+  .intro-strip {
+    @apply flex flex-col gap-4 rounded-2xl border-4 border-zinc-950 bg-violet-100 p-5 text-lg font-black leading-7 text-zinc-950 shadow-[8px_8px_0_rgba(15,23,42,.16)] dark:border-white dark:bg-violet-300 md:flex-row md:items-center md:justify-between;
+  }
+
+  .intro-strip a {
+    @apply inline-flex shrink-0 items-center gap-2 rounded-lg bg-zinc-950 px-4 py-3 text-sm font-black text-white hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-500 focus-visible:outline-offset-2 dark:focus-visible:outline-cyan-300;
+  }
+
+  .timeline {
+    @apply relative grid gap-4 before:absolute before:left-4 before:top-4 before:h-[calc(100%-2rem)] before:w-px before:bg-zinc-200 dark:before:bg-white/10;
+  }
+
+  .timeline-item {
+    @apply relative ml-10 rounded-2xl border border-zinc-200 bg-white/80 p-6 shadow-sm before:absolute before:-left-[1.95rem] before:top-7 before:h-3 before:w-3 before:rounded-full before:bg-cyan-600 dark:border-white/10 dark:bg-white/[0.045] dark:before:bg-cyan-300 sm:flex sm:items-start sm:justify-between;
+  }
+
+  .achievement-card {
+    @apply rounded-2xl border-2 border-zinc-200 bg-white p-5 text-base font-semibold leading-7 text-zinc-800 shadow-sm dark:border-white/10 dark:bg-white/[0.045] dark:text-zinc-200;
+  }
+
+  .contact-panel {
+    @apply rounded-3xl border-4 border-zinc-950 bg-white p-6 shadow-[10px_10px_0_rgba(8,145,178,.18)] dark:border-white dark:bg-white/[0.055] md:p-8;
+  }
+}
