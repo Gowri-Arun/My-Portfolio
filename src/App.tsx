@@ -82,13 +82,13 @@ export default function App() {
         </aside>
       </section>
 
-      <Section id="work" eyebrow="Selected work" title="Four projects. Four different engineering strengths.">
+      <Section id="work" eyebrow="Selected work" title="PROJECTS & SYSTEMS BUILT"><p className="max-w-2xl text-sm leading-6 text-zinc-600 dark:text-zinc-300"></p>
         <div className="grid gap-5 md:grid-cols-2">{selectedProjects.map((project) => <ProjectCard key={project.name} project={project} onViewDetails={setActiveProject} />)}</div>
       </Section>
 
       <Section id="experience" eyebrow="Experience & research" title="Building dependable systems in research and practice">
         <div className="timeline">{portfolio.experience.slice(0, 3).map((item) => <article className="timeline-item" key={`${item.role}-${item.organization}`}><div><p className="text-sm font-semibold text-cyan-800 dark:text-cyan-200">{item.organization}</p><h3 className="mt-1 text-xl font-bold">{item.role}</h3><details className="mt-3"><summary>Read summary</summary><p className="mt-3 text-sm leading-6 text-zinc-700 dark:text-zinc-300">{item.description}</p></details></div><p className="shrink-0 text-sm font-semibold text-zinc-500 dark:text-zinc-400">{item.duration}</p></article>)}</div>
-        <details className="additional-details"><summary>Additional community experience</summary><div className="mt-4 grid gap-3 md:grid-cols-2">{portfolio.experience.slice(3).map((item) => <article className="quiet-card" key={`${item.role}-${item.organization}`}><p className="text-sm font-semibold text-cyan-800 dark:text-cyan-200">{item.organization} &middot; {item.duration}</p><h3 className="mt-1 font-bold">{item.role}</h3><p className="mt-2 text-sm leading-6 text-zinc-700 dark:text-zinc-300">{item.description}</p></article>)}</div></details>
+       
       </Section>
 
       <Section eyebrow="Research & technical exploration" title="Exploring systems beyond the product surface"><div className="grid gap-4 lg:grid-cols-3">{researchProjects.map((project) => <ProjectCard compact key={project.name} project={project} onViewDetails={setActiveProject} />)}</div></Section>
@@ -103,9 +103,9 @@ export default function App() {
 
       <Section id="skills" eyebrow="Skills" title="A practical engineering stack"><div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">{skillGroups.map(([label, skills]) => <article className="quiet-card" key={label}><h3 className="text-base font-bold">{label}</h3><div className="mt-4 flex flex-wrap gap-2">{skills.map((skill) => <span className="tech-pill" key={skill}>{skill}</span>)}</div></article>)}</div><details className="additional-details"><summary>Courses & continued learning</summary><div className="mt-4 flex flex-wrap gap-2">{portfolio.skills.courses.map((course) => <span className="tech-pill" key={course}>{course}</span>)}</div></details></Section>
       <Section id="education" eyebrow="Education" title="Academic foundation"><div className="grid gap-3">{portfolio.education.map((item) => <article className="quiet-card" key={item.institution}><div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between"><div><h3 className="font-bold">{item.institution}</h3><p className="mt-1 text-sm text-zinc-700 dark:text-zinc-300">{'degree' in item ? item.degree : item.level}</p></div><p className="text-sm font-semibold text-cyan-800 dark:text-cyan-200">{'gpa' in item && item.gpa ? item.gpa : 'score' in item ? item.score : item.endYear}</p></div></article>)}</div></Section>
-      <Section id="achievements" eyebrow="Achievements" title="Signals of momentum"><ul className="achievement-list">{[...portfolio.achievements, ...portfolio.additionalAchievements].map((achievement) => <li key={achievement}>{achievement}</li>)}</ul></Section>
+      <Section id="achievements" eyebrow="Achievements" title="What I've been upto"><ul className="achievement-list">{[...portfolio.achievements, ...portfolio.additionalAchievements].map((achievement) => <li key={achievement}>{achievement}</li>)}</ul></Section>
       <Section id="contact" eyebrow="Contact" title="Let's build something useful."><div className="contact-panel"><div><h3 className="text-2xl font-bold">Interested in reliable software, backend systems, or applied AI?</h3><p className="mt-3 max-w-2xl leading-7 text-zinc-700 dark:text-zinc-300">I'm seeking Summer 2027 internship opportunities and would love to connect.</p></div><div className="mt-7 flex flex-wrap gap-3">{portfolio.contact.email && <CopyEmail email={portfolio.contact.email} />}<a className="contact-link" href={portfolio.contact.linkedin} target="_blank" rel="noopener noreferrer"><Linkedin className="h-4 w-4" /> LinkedIn</a><a className="contact-link" href={portfolio.contact.github} target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" /> GitHub</a>{portfolio.contact.email && <a className="contact-link" href={mailto(portfolio)}><Mail className="h-4 w-4" /> Email</a>}</div></div></Section>
-      <footer className="mx-auto max-w-6xl px-5 py-10 text-sm text-zinc-500 md:px-8">&copy; {new Date().getFullYear()} {portfolio.name}. Built with intention.</footer>
+      <footer className="mx-auto max-w-6xl px-5 py-10 text-sm text-zinc-500 md:px-8">&copy; {new Date().getFullYear()} {portfolio.name}</footer>
       <ProjectDetailsDialog project={activeProject} onClose={() => setActiveProject(null)} />
     </main>
   );

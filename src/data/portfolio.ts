@@ -480,23 +480,7 @@ export const portfolio = {
         'Developed a leakage-controlled intrusion detection research pipeline for approximately 2.54 million UNSW-NB15 records. Evaluated feature selection, PCA, class balancing, and ML/deep-learning classifiers, including a shared-feature BiLSTM with 98.70% reported binary accuracy and 95.10% F1.',
       type: 'Research',
     },
-    {
-      role: 'Contributor',
-      organization: 'GirlScript Summer of Code',
-      duration: 'May 2026 - Present',
-      description:
-        'Participating as an open-source contributor in GirlScript Summer of Code.',
-      type: 'Open Source',
-    },
-    {
-      role: 'Volunteer',
-      organization: 'Google Developer Groups',
-      duration: 'Oct 2024 - Sep 2025',
-      description:
-        'Contributed to developer community activities and technical events.',
-      type: 'Community',
-    },
-  ],
+      ],
 
   achievements: [
     'Top 10 of 7,100+ registrations - NMIT Hacks 2026',
